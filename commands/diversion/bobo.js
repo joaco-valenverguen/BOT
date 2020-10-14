@@ -1,10 +1,10 @@
 const { Command } = require('../../commands')
-module.exports = class SayCommand extends Command {
+module.exports = class BoboCommand extends Command {
  constructor() {
   super({
-   name: 'say',
+   name: 'bobo',
    aliases: [], 
-   category: 'general',
+   category: 'diversion',
    priority: 9,
    permLvl: 0
   })
@@ -13,7 +13,7 @@ module.exports = class SayCommand extends Command {
 
 	let texto = args.join(" ");
 	if (!texto) message.channel.send('Debe escribir un mensaje.');
+    else(message.channel.send(`${message.author.username}   tu eres el  ${args}`));
 
-	message.channel.send(texto);
  }
 }

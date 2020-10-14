@@ -10,7 +10,8 @@ module.exports = {
  categories: [
   {name: "general", priority: 5},
   {name: "admin", priority: 8},
-  {name: "music", priority: 7}
+  {name: "music", priority: 7},
+  {name: "diversion", priority: 6}
  ],
  groups: [
   {name: "User", permlvl: 0},

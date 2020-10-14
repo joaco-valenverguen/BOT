@@ -4,7 +4,7 @@ module.exports = class Ball8Command extends Command {
   super({
    name: '8ball',
    aliases: [], 
-   category: 'general',
+   category: 'diversion',
    priority: 9,
    permLvl: 0
   })
