@@ -13,14 +13,19 @@ module.exports = class kickCommand extends Command {
     }
     async execute( message, args) {
 
-        let mencionado = message.mentions.users.first();
+        let user = message.mentions.users.first();
         let razon = args.slice(1).join(' ');
-      
-        if(!mencionado) {return message.reply('No ha mencionando a ningún miembro.')};
-        if(!razon) {return message.channel.send('Escriba una razón del uso de kick.')};
-      
-        message.guild.member(mencionado).kick(razon);
-        message.channel.send(`**${mencionado.username}**, fue expulsado del servidor, razón: ${razon}.`);
+        
+        var perms = message.member.hasPermission("KICK_MEMBERS");
+        
+        if(!perms) return message.channel.send("`Error` `|` No tienes Permisos para usar este comando.");
+        if (message.mentions.users.size < 1) return message.reply('Debe mencionar a alguien.').catch(console.error);
+        
+        if (!razon) return message.channel.send('Escriba una razón, `-kick @username [razón]`');
+        if (!message.guild.member(user).kickable) return message.reply('No puedo patear al usuario mencionado.');
+             
+        message.guild.member(user).kick(razon);
+        message.channel.send(`**${user.username}**, fue pateado del servidor, razón: ${razon}.`);
       
       }
       
