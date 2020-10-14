@@ -1,10 +1,12 @@
+const modos = require('./modo')
 module.exports = {
+ modo : modos.mode, 
  dirBase : './database/base_1.db',
  superusers: [], //Puedes añadir ID
- token: 'NzU5MTUzNjgxMzYxNzk3MTQw.X25W9g.WrpxguvECr6Yn4ubpPfXrNdBa_o',
+ token: `${modos.tokensito}`,
  ytKey: 'AIzaSyDE87WnP3ErjLm3aISDkHcTn2nm-eb3jVA',
  prefix: '?',
- statusBOT: 'Estoy listo!',
+ statusBOT: `Estoy listo!`,
  categories: [
   {name: "general", priority: 5},
   {name: "admin", priority: 8},

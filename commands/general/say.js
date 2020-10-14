@@ -3,7 +3,7 @@ module.exports = class SayCommand extends Command {
  constructor() {
   super({
    name: 'say',
-   aliases: [],
+   aliases: [], 
    category: 'general',
    priority: 9,
    permLvl: 0
