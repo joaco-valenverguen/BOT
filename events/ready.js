@@ -15,5 +15,6 @@ module.exports = async client => {
 
  let time = Date.now() - startTime;
  console.log(`${config.statusBOT}, tomo ${time}ms , en modo: ${config.modo} y soy ${client.user.username} `);
+ console.log(client._events)
 
 }

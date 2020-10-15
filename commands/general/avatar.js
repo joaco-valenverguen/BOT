@@ -11,13 +11,19 @@ module.exports = class AvatarCommand extends Command {
    permLvl: 0
   })
  }
- execute(msg) {
+ execute(message, args) {
 
-    let embed = new Discord.MessageEmbed()
-    .setImage(`${msg.author.displayAvatarURL()}`)
-    .setColor(0x66b3ff)
-    .setFooter(`Avatar de ${msg.author.username}`)
- 
-  msg.channel.send(embed)
+  let member = message.mentions.members.first() //mencion
+  || message.guild.members.resolve(args[0]) //id
+  || message.member //autor
+      
+const embed = new Discord.MessageEmbed()
+  .setImage(member.user.displayAvatarURL())
+  .setColor(member.displayHexColor)
+  .setFooter(
+    (member.id === message.member.id)?`Tu avatar ${member.displayName}`:`Avatar de ${member.displayName}`
+  );
+  
+message.channel.send({embed: embed});
  }
 }

@@ -18,6 +18,9 @@ for (let file of fs.readdirSync("./events/")) {
  }
  
 }
+client.on("messageDelete", function(message){
+    console.log(`message has been deleted by ${message.author.username} -> ${message}`);
+}); 
 
 client.login(config.token)
 
