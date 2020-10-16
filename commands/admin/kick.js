@@ -25,7 +25,19 @@ module.exports = class kickCommand extends Command {
         if (!message.guild.member(user).kickable) return message.reply('No puedo patear al usuario mencionado.');
              
         message.guild.member(user).kick(razon);
-        message.channel.send(`**${user.username}**, fue pateado del servidor, razón: ${razon}.`);
+        const embedkick = new MessageEmbed() //crea el embed
+        .setTitle("**Alguien ha sido kickeado!**")
+        .setDescription(`**${user.username} ha sido kickeado del servidor.**\n` +
+        `**Razón = ${razon}**\n` +
+        `**Moderador responsable = ${message.author.username}\n**`)
+        .setColor("RED")
+        .setTimestamp()
+        .setFooter("Bot desarrollado por (TUNOMBRE)")//en TUNOMBRE pones tu nombre, esto es opcional.
+        
+        message.channel.send(user.username + " fue kickeado correctamente.") //envia un mensaje al canal actual de expulsion exitosa
+        canal.send({embed:embedkick})//envia el embed al canal anteriormente especificado con la id.
+        console.log(user.username + " fue expulsado por " + message.author.username) //envia a la consola quien fue kickeado, y por quien.
+        
       
       }
       

@@ -25,9 +25,12 @@ module.exports = class ServerCommand extends Command {
         .addField('Dueño del Servidor', server.owner.user.tag+' ('+server.owner.user.id +')', true)
         .addField('Miembros', message.guild.members.cache.filter(m => m.user.bot == false).size,true)
         .addField('bots', message.guild.members.cache.filter(m => m.user.bot == true).size , true)
+        .addField('miembros online', message.guild.members.cache.filter((m) => m.presence.status === "online").size,true)
+        .addField('miembros offline', message.guild.members.cache.filter((m) => m.presence.status === "offline").size,true)
+        .addField('miembros ausentes', message.guild.members.cache.filter((m) => m.presence.status === "idle").size,true)
+        .addField('miembros en no molestar', message.guild.members.cache.filter((m) => m.presence.status === "dnd").size,true)
         .addField('Roles', server.roles.cache.size, true)
-        .setColor(0x66b3ff)
-            
+        .setColor(0x66b3ff)    
         message.channel.send(embed);
 
     }      
