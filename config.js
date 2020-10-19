@@ -2,7 +2,7 @@ const modos = require('./modo')
 module.exports = {
  modo : modos.mode, 
  dirBase : './database/base_1.db',
- superusers: [], //Puedes añadir ID
+ superusers: [707672397808926820], //Puedes añadir ID
  token: `${modos.tokensito}`,
  ytKey: 'AIzaSyDE87WnP3ErjLm3aISDkHcTn2nm-eb3jVA',
  prefix: '?',
@@ -11,9 +11,7 @@ module.exports = {
   {name: "general", priority: 5},
   {name: "admin", priority: 8},
   {name: "music", priority: 7},
-  {name: "diversion", priority: 6},
-  {name: "eventcommands", priority :4}
-
+  {name: "diversion", priority: 6}
  ],
  groups: [
   {name: "User", permlvl: 0},
