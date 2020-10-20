@@ -39,7 +39,7 @@ message.channel.messages.fetch({
   message.channel.bulkDelete(
     mensajes.filter(m => !m.pinned) //para no borrar los mensajes anclados
   ).then(() => {
-    message.channel.send(`Listo, borre los ${cantidad} mensajes :ok_hand:`).then(m => m.delete(20000))
+    message.channel.send(`Listo, borre los ${cantidad} mensajes :ok_hand:`).then(m => m.delete({ timeout: 20000 }))
   }).catch(e => {
     message.channel.send('Ocurrio un error y no pude borrar los mensajes')
   })

@@ -1,6 +1,5 @@
-const {
-    Command
-   } = require('../../commands')
+const {Command} = require('../../commands')
+const {MessageEmbed } = require('discord.js');
 module.exports = class kickCommand extends Command {
     constructor() {
      super({
@@ -34,8 +33,7 @@ module.exports = class kickCommand extends Command {
         .setTimestamp()
         .setFooter("Bot desarrollado por (TUNOMBRE)")//en TUNOMBRE pones tu nombre, esto es opcional.
         
-        message.channel.send(user.username + " fue kickeado correctamente.") //envia un mensaje al canal actual de expulsion exitosa
-        canal.send({embed:embedkick})//envia el embed al canal anteriormente especificado con la id.
+        message.channel.send({embed:embedkick})//envia el embed al canal anteriormente especificado con la id.
         console.log(user.username + " fue expulsado por " + message.author.username) //envia a la consola quien fue kickeado, y por quien.
         
       
