@@ -1,6 +1,4 @@
-const {
- Command
-} = require('../../commands')
+const {Command} = require('../../commands')
 
 const db = require('../../database/database');
 
