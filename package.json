@@ -10,7 +10,7 @@
     "discord",
     "bot"
   ],
-  "author": "CraterMaik",
+  "author": "Joaco Valenverguen",
   "license": "MIT",
   "dependencies": {
     "canvas": "^2.6.1",
