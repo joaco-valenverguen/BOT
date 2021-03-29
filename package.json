@@ -1,0 +1,23 @@
+{
+  "name": "dbm-v12",
+  "version": "1.1.0",
+  "description": "Discord bot modular v12",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "CraterMaik",
+  "license": "MIT",
+  "dependencies": {
+    "canvas": "^2.6.1",
+    "discord.js": "^12.3.1",
+    "nodemon": "^2.0.6",
+    "simple-youtube-api": "^5.2.1",
+    "sqlite3": "^5.0.0",
+    "ytdl-core": "^3.3.0"
+  }
+}
